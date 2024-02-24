@@ -24,7 +24,11 @@ const routes: Routes = [
   {
     path: 'tasks-details',
     component: TaskDetailsComponent
-  }
+  },
+  {
+    path: '',
+    component: CreateTaskComponent
+  },
 ];
 
 @NgModule({
