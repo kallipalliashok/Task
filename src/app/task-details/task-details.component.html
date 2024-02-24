@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="mt-4 mb-3">Tasks Details</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Due date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of taskList;let i = index">
+        <tr>
+          <td>{{i+1}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.date}}</td>
+          <td>{{item.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

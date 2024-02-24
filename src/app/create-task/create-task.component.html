@@ -1,0 +1,33 @@
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="taskForm">
+            <div class="form-group">
+              <label for="title">Title:</label>
+              <input type="text" class="form-control" id="title" formControlName="title">
+              <div *ngIf="taskForm?.get('title')?.invalid && taskForm?.get('title')?.touched" class="text-danger">
+                Title is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <input type="text" class="form-control" id="description" formControlName="description">
+            </div>
+            <div *ngIf="taskForm?.get('description')?.invalid && taskForm?.get('description')?.touched" class="text-danger">
+                Description is required
+              </div>
+            <div class="form-group">
+                <label for="date">Due Date:</label>
+                <input type="date" class="form-control" id="date" formControlName="date">
+              </div>
+              <div *ngIf="taskForm?.get('date')?.invalid && taskForm?.get('date')?.touched" class="text-danger">
+                Due date is required
+              </div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()" *ngIf="!taskForm.value._id">Submit</button>
+            <button type="submit" class="btn btn-primary" (click)="onUpdate()"*ngIf="taskForm.value._id">Update</button>
+          </form>
+          
+      </div>
+    </div>
+  </div>
+

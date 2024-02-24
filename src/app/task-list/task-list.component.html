@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="mt-4 mb-3">TaskList Table</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Due date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of taskList;let i = index">
+        <tr>
+          <td>{{i+1}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.date}}</td>
+          <td  class="action-buttons">
+            <button type="button" class="btn btn-primary btn-sm" (click)="editItem(item)">Complete</button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteItem(item)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
